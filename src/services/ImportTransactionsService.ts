@@ -28,11 +28,11 @@ class ImportTransactionsService {
     const fileSplit = file.split('\n');
     const createTransactionService = new CreateTransactionService();
 
-    let isFirst = true;
+    let primeiro = true;
 
     for (const fileCsv of fileSplit) {
-      if (isFirst) {
-        isFirst = false;
+      if (primeiro) {
+        primeiro = false;
         continue;
       }
       const col = fileCsv.split(',');
