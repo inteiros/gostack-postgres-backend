@@ -35,14 +35,14 @@ class ImportTransactionsService {
         primeiro = false;
         continue;
       }
-      const col = fileCsv.split(',');
+      const linha = fileCsv.split(',');
 
-      if (col.length === 4) {
-        const title = col[0];
-        const type = col[1];
-        const valstring = col[2];
+      if (linha.length === 4) {
+        const title = linha[0];
+        const type = linha[1];
+        const valstring = linha[2];
         const value = Number(valstring.trim());
-        const category = col[3];
+        const category = linha[3];
         const transaction = await createTransactionService.execute({
           title: title.trim(),
           value,
